@@ -195,7 +195,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2025-02-05 10:25:10 / 修改时间：10:30:46" itemprop="dateCreated datePublished" datetime="2025-02-05T10:25:10+08:00">2025-02-05</time>
+              <time title="创建时间：2025-02-05 10:25:10 / 修改时间：10:42:56" itemprop="dateCreated datePublished" datetime="2025-02-05T10:25:10+08:00">2025-02-05</time>
             </span>
 
           
@@ -211,7 +211,9 @@
       
           <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>由于网络问题，hexo 部署失败</p>
 <p><img src="/../images/image-20250205102819173.png" alt="image-20250205102819173"></p>
-<h1 id="解决过程"><a href="#解决过程" class="headerlink" title="解决过程"></a>解决过程</h1><p>我们在尝试部署本地静态网页到github时报错，报错截图，如图所示</p>
+<p>解决办法：</p>
+<p>使用 SSH 连接</p>
+<h1 id="解决过程"><a href="#解决过程" class="headerlink" title="解决过程"></a>解决过程</h1><p>我们在尝试部署本地静态网页到 github 时报错，报错截图，如图所示</p>
 <p><img src="/../images/image-20250205102635714.png" alt="image-20250205102635714"></p>
 <p>我们在这里截取比较重要的部分，报错显示无法访问这个端口，应该是网络问题。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">fatal: unable to access &#x27;https://github.com/drinkwat/drinkwat.github.io.git/&#x27;: Failed to connect to github.com port 443 after 21157 ms: Couldn&#x27;t connect to server</span><br><span class="line">FATAL Something&#x27;s wrong. Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.html</span><br><span class="line">Error: Spawn failed</span><br><span class="line">    at ChildProcess.&lt;anonymous&gt; (D:\06-Documents\Blog\node_modules\hexo-deployer-git\node_modules\hexo-util\lib\spawn.js:51:21)</span><br><span class="line">    at ChildProcess.emit (node:events:518:28)</span><br><span class="line">    at cp.emit (D:\06-Documents\Blog\node_modules\cross-spawn\lib\enoent.js:34:29)</span><br><span class="line">    at ChildProcess._handle.onexit (node:internal/child_process:293:12)</span><br></pre></td></tr></table></figure>
@@ -221,6 +223,42 @@
 <h2 id="SSH-连接"><a href="#SSH-连接" class="headerlink" title="SSH 连接"></a>SSH 连接</h2><p>万恶的 HTTPS 连接</p>
 <p><img src="/../images/image-20250205103023708.png" alt="image-20250205103023708"></p>
 <p>我们尝试直接改成 SSH 连接</p>
+<p>成功</p>
+<p><img src="/../images/image-20250205103155451.png" alt="image-20250205103155451"></p>
+<p>这时候，我们访问网页，发现直接更新了，所以之前是不是部署失败了，我们没有意识到吗</p>
+<p>还有一个问题，我们后面肯定要解决，网站加载的时间比较长。</p>
+<h1 id="扩展-如何配置-SSH-连接"><a href="#扩展-如何配置-SSH-连接" class="headerlink" title="扩展: 如何配置 SSH 连接"></a>扩展: 如何配置 SSH 连接</h1><h2 id="生成-SSH-密钥"><a href="#生成-SSH-密钥" class="headerlink" title="生成 SSH 密钥"></a>生成 SSH 密钥</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="查看密钥，并复制密钥"><a href="#查看密钥，并复制密钥" class="headerlink" title="查看密钥，并复制密钥"></a>查看密钥，并复制密钥</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="将-SSH-密钥添加到-GitHub"><a href="#将-SSH-密钥添加到-GitHub" class="headerlink" title="将 SSH 密钥添加到 GitHub"></a>将 SSH 密钥添加到 GitHub</h2><ol>
+<li>登录 GitHub，点击右上角头像 → <code>Settings</code>。</li>
+<li>在左侧菜单中点击 <code>SSH and GPG keys</code>。</li>
+<li>点击 <code>New SSH key</code>：<ul>
+<li><strong>Title</strong>：填写一个描述（例如 <code>My Laptop</code>）。</li>
+<li><strong>Key</strong>：粘贴刚才复制的公钥内容。</li>
+</ul>
+</li>
+<li>点击 <code>Add SSH key</code> 保存。</li>
+</ol>
+<hr>
+<h2 id="测试-SSH-连接"><a href="#测试-SSH-连接" class="headerlink" title="测试 SSH 连接"></a>测试 SSH 连接</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+
+<p><img src="/../images/image-20250205103908885.png" alt="image-20250205103908885"></p>
+<h2 id="修改-Hexo-的部署配置"><a href="#修改-Hexo-的部署配置" class="headerlink" title="修改 Hexo 的部署配置"></a><strong>修改 Hexo 的部署配置</strong></h2><ol>
+<li><p>打开 Hexo 根目录的 <code>_config.yml</code> 文件。</p>
+</li>
+<li><p>找到 <code>deploy</code> 配置，将 <code>repo</code> 改为 SSH 地址：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:drinkwat/drinkwat.github.io.git</span><br><span class="line">  branch: main</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>注意</strong>：确保 <code>branch</code> 设置为 <code>main</code>（如果你的默认分支是 <code>main</code>）。</li>
+</ul>
+</li>
+</ol>
+<h2 id="清理并重新部署"><a href="#清理并重新部署" class="headerlink" title="清理并重新部署"></a><strong>清理并重新部署</strong></h2><p>就是那三个命令</p>
 
       
     </div>
