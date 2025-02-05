@@ -170,6 +170,76 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/02/05/hexo%E9%83%A8%E7%BD%B2%E5%A4%B1%E8%B4%A5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="drinkwat">
+      <meta itemprop="description" content="纳于大麓，烈风雷雨弗迷">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/02/05/hexo%E9%83%A8%E7%BD%B2%E5%A4%B1%E8%B4%A5/" class="post-title-link" itemprop="url">hexo部署失败</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2025-02-05 10:25:10 / 修改时间：10:30:46" itemprop="dateCreated datePublished" datetime="2025-02-05T10:25:10+08:00">2025-02-05</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>由于网络问题，hexo 部署失败</p>
+<p><img src="/../images/image-20250205102819173.png" alt="image-20250205102819173"></p>
+<h1 id="解决过程"><a href="#解决过程" class="headerlink" title="解决过程"></a>解决过程</h1><p>我们在尝试部署本地静态网页到github时报错，报错截图，如图所示</p>
+<p><img src="/../images/image-20250205102635714.png" alt="image-20250205102635714"></p>
+<p>我们在这里截取比较重要的部分，报错显示无法访问这个端口，应该是网络问题。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">fatal: unable to access &#x27;https://github.com/drinkwat/drinkwat.github.io.git/&#x27;: Failed to connect to github.com port 443 after 21157 ms: Couldn&#x27;t connect to server</span><br><span class="line">FATAL Something&#x27;s wrong. Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.html</span><br><span class="line">Error: Spawn failed</span><br><span class="line">    at ChildProcess.&lt;anonymous&gt; (D:\06-Documents\Blog\node_modules\hexo-deployer-git\node_modules\hexo-util\lib\spawn.js:51:21)</span><br><span class="line">    at ChildProcess.emit (node:events:518:28)</span><br><span class="line">    at cp.emit (D:\06-Documents\Blog\node_modules\cross-spawn\lib\enoent.js:34:29)</span><br><span class="line">    at ChildProcess._handle.onexit (node:internal/child_process:293:12)</span><br></pre></td></tr></table></figure>
+
+<h2 id="VPN"><a href="#VPN" class="headerlink" title="VPN"></a>VPN</h2><p>尝试代理 vpn 失败，我们发现其实是可以访问官网的</p>
+<p><img src="/../images/image-20250205102910980.png" alt="image-20250205102910980"></p>
+<h2 id="SSH-连接"><a href="#SSH-连接" class="headerlink" title="SSH 连接"></a>SSH 连接</h2><p>万恶的 HTTPS 连接</p>
+<p><img src="/../images/image-20250205103023708.png" alt="image-20250205103023708"></p>
+<p>我们尝试直接改成 SSH 连接</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2025/02/05/%E6%8A%A5%E9%94%99%E8%A7%A3%E5%86%B3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -463,14 +533,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
