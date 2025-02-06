@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="前言之前写过的一些东西，整理一些发发吧 创新实验室小课堂一周一度的创新实验室小课堂又开始啦，让我们来一起学习吧，今天为大家介绍的是Nomachine。  Nomachine官网		NoMachine - Download Free Remote Desktop Access 什么是Nomachine​	NoMachine是一款远程桌面软件。适用于Linux、windows、ARM、Android等">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Nomachine配置教程">
+<meta property="og:url" content="http://example.com/2025/02/06/Nomachine%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B/index.html">
+<meta property="og:site_name">
+<meta property="og:description" content="前言之前写过的一些东西，整理一些发发吧 创新实验室小课堂一周一度的创新实验室小课堂又开始啦，让我们来一起学习吧，今天为大家介绍的是Nomachine。  Nomachine官网		NoMachine - Download Free Remote Desktop Access 什么是Nomachine​	NoMachine是一款远程桌面软件。适用于Linux、windows、ARM、Android等">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/images/e213.gif">
+<meta property="og:image" content="https://qzonestyle.gtimg.cn/qzone/em/e213.gif">
+<meta property="og:image" content="https://qzonestyle.gtimg.cn/qzone/em/e213.gif">
+<meta property="og:image" content="http://example.com/images/image-20240321195302565-1738844059093-6.png">
+<meta property="og:image" content="http://example.com/images/5d5a26a045306a9700ccd0333bbe1b7e.png">
+<meta property="og:image" content="http://example.com/images/37cea36f4a3f4786715a8437a8cd09db.png">
+<meta property="og:image" content="http://example.com/images/0c30022ba4bc8ec5151d09cd337ef9e5.png">
+<meta property="og:image" content="http://example.com/images/image-20240321211417998-1738844059093-7.png">
+<meta property="og:image" content="http://example.com/images/image-20240321211518493-1738844059093-8.png">
+<meta property="og:image" content="http://example.com/images/image-20240321211601156-1738844059094-11.png">
+<meta property="og:image" content="http://example.com/images/image-20240321211659135.png">
+<meta property="og:image" content="http://example.com/images/image-20240321203403460-1738844059093-9.png">
+<meta property="og:image" content="http://example.com/images/image-20240321203433603-1738844059094-10.png">
+<meta property="og:image" content="http://example.com/images/e253.gif">
+<meta property="og:image" content="https://qzonestyle.gtimg.cn/qzone/em/e253.gif">
+<meta property="og:image" content="https://qzonestyle.gtimg.cn/qzone/em/e253.gif">
+<meta property="article:published_time" content="2025-02-06T12:13:29.000Z">
+<meta property="article:modified_time" content="2025-02-06T12:15:12.811Z">
+<meta property="article:author" content="drinkwat">
+<meta property="article:tag" content="教程">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/e213.gif">
+
+<link rel="canonical" href="http://example.com/2025/02/06/Nomachine%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Nomachine配置教程 | </title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title"></h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">饮冰居士</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-resources">
+
+    <a href="/resources/" rel="section"><i class="download fa-fw"></i>资源</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/02/06/Nomachine%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="drinkwat">
+      <meta itemprop="description" content="纳于大麓，烈风雷雨弗迷">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Nomachine配置教程
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2025-02-06 20:13:29 / 修改时间：20:15:12" itemprop="dateCreated datePublished" datetime="2025-02-06T20:13:29+08:00">2025-02-06</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>之前写过的一些东西，整理一些发发吧</p>
+<h1 id="创新实验室小课堂"><a href="#创新实验室小课堂" class="headerlink" title="创新实验室小课堂"></a>创新实验室小课堂</h1><p>一周一度的创新实验室小课堂又开始啦<img src="/../images/e213.gif" alt="表情"><img src="https://qzonestyle.gtimg.cn/qzone/em/e213.gif" alt="表情"><img src="https://qzonestyle.gtimg.cn/qzone/em/e213.gif" alt="表情">，让我们来一起学习吧，今天为大家介绍的是Nomachine。</p>
+<p><img src="/../images/image-20240321195302565-1738844059093-6.png" alt="image-20240321195302565"></p>
+<p>Nomachine官网		<a target="_blank" rel="noopener" href="https://downloads.nomachine.com/">NoMachine - Download Free Remote Desktop Access</a></p>
+<h2 id="什么是Nomachine"><a href="#什么是Nomachine" class="headerlink" title="什么是Nomachine"></a>什么是Nomachine</h2><p>​	<strong>NoMachine</strong>是一款<strong>远程桌面软件</strong>。适用于Linux、windows、<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=ARM&spm=1001.2101.3001.7020">ARM</a>、Android等几乎全系统。它使用户能够方便地远程访问和管理他们的电脑。常见的远程桌面软件还有向日葵、ToDesk等。</p>
+<p>​	官网下载地址 </p>
+<h2 id="为什么要使用Nomachin"><a href="#为什么要使用Nomachin" class="headerlink" title="为什么要使用Nomachin"></a>为什么要使用Nomachin</h2><ul>
+<li><strong>操作简单</strong>：NoMachine提供了直观的用户界面，使配置和连接过程变得简单，用户无需有复杂的网络知识就可以轻松进行远程访问。</li>
+<li><strong>性能好</strong>：NoMachine采用NX技术，相比传统的VNC或RDP等远程桌面技术有更快的速度和更好的性能，特别是在低带宽或高延迟的网络环境下。</li>
+<li><strong>安全性</strong>：NoMachine提供了多种加密选项，确保远程连接的安全性。它可以配置使用SSL加密进行所有的远程会话，以防止数据泄露。</li>
+</ul>
+<p>特别的，当我们操作板卡（如树莓派，json），但是没有显示器时，使用Nomachine进行远程访问是一个不错的选择</p>
+<h2 id="Nomachine的配置"><a href="#Nomachine的配置" class="headerlink" title="Nomachine的配置"></a>Nomachine的配置</h2><p>测试环境：主机环境使用的时Windows11系统，从机镜像系统是Ubuntu20.04，CPU架构X86_64</p>
+<h3 id="Windows主机配置"><a href="#Windows主机配置" class="headerlink" title="Windows主机配置"></a>Windows主机配置</h3><ul>
+<li>下载安装Nomachine</li>
+</ul>
+<p><img src="/../images/5d5a26a045306a9700ccd0333bbe1b7e.png" alt="img"></p>
+<p>​	默认安装即可</p>
+<p>​	<img src="/../images/37cea36f4a3f4786715a8437a8cd09db.png" alt="img"></p>
+<ul>
+<li>进入主界面</li>
+</ul>
+<p><img src="/../images/0c30022ba4bc8ec5151d09cd337ef9e5.png" alt="img"></p>
+<p>​	主机必须和从机在同一局域网下Nomachine才能自动搜索到设备</p>
+<h3 id="Linux从机配置"><a href="#Linux从机配置" class="headerlink" title="Linux从机配置"></a>Linux从机配置</h3><h4 id="下载安装Nomachine"><a href="#下载安装Nomachine" class="headerlink" title="下载安装Nomachine"></a>下载安装Nomachine</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ unmae -m		//查询CPU架构</span><br><span class="line">$ sudo apt-get update			//更新软件源</span><br><span class="line">$ wget </span><br><span class="line">https://download.nomachine.com/download/8.11/Linux/nomachine_8.11.3_4_amd64.deb  		//下载Nomachine安装包</span><br><span class="line">$ sudo dpkg -i nomachine_8.11.3_4_amd64.deb		//安装软件包</span><br></pre></td></tr></table></figure>
+
+<h4 id="原理解释-不感兴趣直接跳过"><a href="#原理解释-不感兴趣直接跳过" class="headerlink" title="原理解释 (不感兴趣直接跳过)"></a>原理解释 (不感兴趣直接跳过)</h4><hr>
+<h5 id="unmae-m"><a href="#unmae-m" class="headerlink" title="unmae -m"></a>unmae -m</h5><p><img src="/../images/image-20240321211417998-1738844059093-7.png" alt="image-20240321211417998"></p>
+<p>本命令用于查询CPU的系统架构，一般有<em>x86,x86_64,amd64,arm64,arrch64</em></p>
+<table>
+<thead>
+<tr>
+<th><strong>架构</strong></th>
+<th><strong>指令集位数</strong></th>
+<th><strong>原因</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>X86</td>
+<td>32位</td>
+<td>英特尔出的处理习惯以86为结尾，如80186、80286、80386，所以之后被称之为 X86</td>
+</tr>
+<tr>
+<td>AMD64</td>
+<td>64位</td>
+<td>32位向64位演进时，AMD 抢先制造出了兼容 X86 32位指令集的 64位处理器</td>
+</tr>
+<tr>
+<td>X86-64</td>
+<td>64位</td>
+<td>英特尔设计 IA-64，比amd晚了一步，且不兼容 X86 32位指令集，比较惨淡<br/>因此后续因特尔也采用 AMD64，但在此基础上进行了扩充，并改名为 X86-64<br/>所以 x86_64,x64,AMD64基本上是同一个东西<br/>现在用的intel&#x2F;amd的桌面级CPU基本上都是x86_64</td>
+</tr>
+<tr>
+<td>ARM</td>
+<td></td>
+<td>一般用于嵌入式系统</td>
+</tr>
+<tr>
+<td>ARM-V8</td>
+<td>AArch64：64位执行状态<br/>AArch32：32位执行状态</td>
+<td>有两种执行态，适用于 32位和64位</td>
+</tr>
+<tr>
+<td>AArch64</td>
+<td>64位</td>
+<td>从 ARM-V8 中独立出来</td>
+</tr>
+</tbody></table>
+<p>可以简单的将 x86_64,x64,AMD64理解为同一种64位的CPU架构，arrch一般用于嵌入式系统。</p>
+<hr>
+<h5 id="sudo-apt-get-update"><a href="#sudo-apt-get-update" class="headerlink" title="sudo apt-get update"></a>sudo apt-get update</h5><p>   <img src="/../images/image-20240321211518493-1738844059093-8.png" alt="image-20240321211518493"> </p>
+<p>从服务器获取软件列表，并在本地保存为文件。</p>
+<p>在 <a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=linux&spm=1001.2101.3001.7020">linux</a>中，安装软件最常用到的是 sudo apt-get ，这个命令会从软件仓库中检索并拉取我们想要的软件。每个linux的发行版，都会维护自己的软件仓库。常用的软件都在仓库中，有固定的维护，保证软件的发行源绝对的安全。</p>
+<p>使用这个命令会读取软件仓库的所有源列表，然后保存在本机。方便本机用户检索、对比。相当于刷新本地的软件列表。用户安装软件时，会直接从本地的源列表中，检索出 URL，进行安装。</p>
+<hr>
+<h5 id="wget-https-download-nomachine-com-download-8-11-Linux-nomachine-8-11-3-4-amd64-deb"><a href="#wget-https-download-nomachine-com-download-8-11-Linux-nomachine-8-11-3-4-amd64-deb" class="headerlink" title="wget  https://download.nomachine.com/download/8.11/Linux/nomachine_8.11.3_4_amd64.deb"></a>wget  <a target="_blank" rel="noopener" href="https://download.nomachine.com/download/8.11/Linux/nomachine_8.11.3_4_amd64.deb">https://download.nomachine.com/download/8.11/Linux/nomachine_8.11.3_4_amd64.deb</a></h5><p> <img src="/../images/image-20240321211601156-1738844059094-11.png" alt="image-20240321211601156"></p>
+<p>在Linux中， wget是一个下载文件的工具，它在终端中使用。对于Linux用户是必不可少的工具</p>
+<ul>
+<li><p>语法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget [选项]... [URL]...</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>从机的CPU架构为x86_64，且因为ubuntu默认支持deb包，所以使用以上命令安装。</p>
+<p>如果安装x86_64版本，则下载的是rpm版本的安装包，在ubuntu系统需要安装rpm包，并将rpm版本的安装包转化为amd64.deb版本，最后安装,较为麻烦，所以没有采用。</p>
+<hr>
+<h5 id="sudo-dpkg-i-nomachine-8-11-3-4-amd64-deb"><a href="#sudo-dpkg-i-nomachine-8-11-3-4-amd64-deb" class="headerlink" title="sudo dpkg -i nomachine_8.11.3_4_amd64.deb"></a>sudo dpkg -i nomachine_8.11.3_4_amd64.deb</h5><p><img src="/../images/image-20240321211659135.png" alt="image-20240321211659135"> </p>
+<p>deb文件是linux发行版<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=debian&spm=1001.2101.3001.7020">debian</a>系统的安装包格式，还有像基于debian系统的发型版ubuntu等系统就是使用的deb格式安装包，我们可以使用dpkg命令进行安装管理这些deb安装包文件。</p>
+<h4 id="配置Nomachine"><a href="#配置Nomachine" class="headerlink" title="配置Nomachine"></a>配置Nomachine</h4><p>启动Nomachine服务器</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo /etc/NX/nxserver --startup</span><br></pre></td></tr></table></figure>
+
+<p>无需进入Nomachine界面</p>
+<h3 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h3><p>将主机和从机配置完成后，将主机和从机连接至同一局域网，打开主机的Nomachine，此时主机可以自动搜索从机设备，输入从机的用户名和密码连接即可</p>
+<p><img src="/../images/image-20240321203403460-1738844059093-9.png" alt="image-20240321203403460"> </p>
+<p><img src="/../images/image-20240321203433603-1738844059094-10.png" alt="image-20240321203433603"> </p>
+<h1 id="寄语"><a href="#寄语" class="headerlink" title="寄语"></a>寄语</h1><p>以上只是简单的介绍了Nomachine的使用，以及如何安装，大家在实际操作时需要注意从机的CPU架构，根据自己的结构，安装不同版本的Nomachine。希望大家对Nomachine能有初步的了解，如果大家将来进行计算机视觉，机器人控制方向的研究，很有可能会使用到Nomachine，比如学院的睿抗比赛。平日的了解只是扩宽视野，将工具运用于实践才是最好的学习。本周的创新实验室小课堂就到这里啦，期待下周与你相见<img src="/../images/e253.gif" alt="表情"><img src="https://qzonestyle.gtimg.cn/qzone/em/e253.gif" alt="表情"><img src="https://qzonestyle.gtimg.cn/qzone/em/e253.gif" alt="表情"></p>
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_24433609/article/details/125991550">x86-64、amd64、arm、aarch64 都是些什么？-CSDN博客</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45476498/article/details/112524662">RPM命令执行失败：bash: rpm: 未找到命令…_bash: rmp: 未找到命令…-CSDN博客</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/shendixiaoxuan/article/details/54381046">ubuntu RPM should not be used directly install RPM packages, use Alien instead!_rpm: rpm should not be used directly install rpm p-CSDN博客</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Mark_md/article/details/107089815">linux命令：软件更新 sudo apt-get update 和 sudo apt-get upgrade-CSDN博客</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/u012300744/article/details/80267225">dpkg安装以及卸载软件_sudo dpkg -i-CSDN博客</a></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%95%99%E7%A8%8B/" rel="tag"># 教程</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2025/02/05/C-%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0/" rel="prev" title="C++入门学习">
+      <i class="fa fa-chevron-left"></i> C++入门学习
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%9B%E6%96%B0%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%B0%8F%E8%AF%BE%E5%A0%82"><span class="nav-number">2.</span> <span class="nav-text">创新实验室小课堂</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFNomachine"><span class="nav-number">2.1.</span> <span class="nav-text">什么是Nomachine</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BD%BF%E7%94%A8Nomachin"><span class="nav-number">2.2.</span> <span class="nav-text">为什么要使用Nomachin</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nomachine%E7%9A%84%E9%85%8D%E7%BD%AE"><span class="nav-number">2.3.</span> <span class="nav-text">Nomachine的配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Windows%E4%B8%BB%E6%9C%BA%E9%85%8D%E7%BD%AE"><span class="nav-number">2.3.1.</span> <span class="nav-text">Windows主机配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Linux%E4%BB%8E%E6%9C%BA%E9%85%8D%E7%BD%AE"><span class="nav-number">2.3.2.</span> <span class="nav-text">Linux从机配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85Nomachine"><span class="nav-number">2.3.2.1.</span> <span class="nav-text">下载安装Nomachine</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8E%9F%E7%90%86%E8%A7%A3%E9%87%8A-%E4%B8%8D%E6%84%9F%E5%85%B4%E8%B6%A3%E7%9B%B4%E6%8E%A5%E8%B7%B3%E8%BF%87"><span class="nav-number">2.3.2.2.</span> <span class="nav-text">原理解释 (不感兴趣直接跳过)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#unmae-m"><span class="nav-number">2.3.2.2.1.</span> <span class="nav-text">unmae -m</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#sudo-apt-get-update"><span class="nav-number">2.3.2.2.2.</span> <span class="nav-text">sudo apt-get update</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#wget-https-download-nomachine-com-download-8-11-Linux-nomachine-8-11-3-4-amd64-deb"><span class="nav-number">2.3.2.2.3.</span> <span class="nav-text">wget  https:&#x2F;&#x2F;download.nomachine.com&#x2F;download&#x2F;8.11&#x2F;Linux&#x2F;nomachine_8.11.3_4_amd64.deb</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#sudo-dpkg-i-nomachine-8-11-3-4-amd64-deb"><span class="nav-number">2.3.2.2.4.</span> <span class="nav-text">sudo dpkg -i nomachine_8.11.3_4_amd64.deb</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%85%8D%E7%BD%AENomachine"><span class="nav-number">2.3.2.3.</span> <span class="nav-text">配置Nomachine</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5"><span class="nav-number">2.3.3.</span> <span class="nav-text">连接</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AF%84%E8%AF%AD"><span class="nav-number">3.</span> <span class="nav-text">寄语</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="nav-number">4.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="drinkwat"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">drinkwat</p>
+  <div class="site-description" itemprop="description">纳于大麓，烈风雷雨弗迷</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/yourname" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yourname@gmail.com" title="E-Mail → mailto:yourname@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/mai-nv-hai-de-xiao-huo-chai-35-19" title="知乎 → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;mai-nv-hai-de-xiao-huo-chai-35-19" rel="noopener" target="_blank"><i class="gratipay fa-fw"></i>知乎</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://https//blog.csdn.net/Later_001" title="CSDN → https:&#x2F;&#x2F;https:&#x2F;&#x2F;blog.csdn.net&#x2F;Later_001" rel="noopener" target="_blank"><i class="codiepie fa-fw"></i>CSDN</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://baidu.com/" title="https:&#x2F;&#x2F;baidu.com" rel="noopener" target="_blank">百度</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://fishc.com.cn/" title="https:&#x2F;&#x2F;fishc.com.cn" rel="noopener" target="_blank">鱼C论坛</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2025-02 – 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">drinkwat</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
