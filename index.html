@@ -170,6 +170,104 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/02/07/C-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="drinkwat">
+      <meta itemprop="description" content="纳于大麓，烈风雷雨弗迷">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/02/07/C-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" class="post-title-link" itemprop="url">C++基本语法</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2025-02-07 17:52:43 / 修改时间：20:05:47" itemprop="dateCreated datePublished" datetime="2025-02-07T17:52:43+08:00">2025-02-07</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>摆烂了几天，在家老老实实睡了一觉，精神气爽，开始学习。</p>
+<p>首先，本教程来源于菜鸟教程，是对菜鸟教程的补充，我之前看过了一遍，这次再加深点印象吧</p>
+<h1 id="C-和-C-的基本区别"><a href="#C-和-C-的基本区别" class="headerlink" title="C 和 C++ 的基本区别"></a>C 和 C++ 的基本区别</h1><p> C++ 是 C 的扩展，增加了许多新特性。</p>
+<p>C 是面向过程的语言，适合底层开发；C++ 是 C 的超集，支持面向对象编程，功能更强大。</p>
+<h2 id="面向过程开发"><a href="#面向过程开发" class="headerlink" title="面向过程开发"></a>面向过程开发</h2><p>首先，什么是面向过程：</p>
+<p>把程序看成一系列步骤，一步步去执行。</p>
+<p>就像做菜，按照食谱一步一步来：洗菜 → 切菜 → 炒菜 → 装盘。</p>
+<p>它的程序由函数组成的，其中数据（变量）和操作（函数）是分开的，适合简单、线性的任务。</p>
+<h2 id="面向对象开发"><a href="#面向对象开发" class="headerlink" title="面向对象开发"></a>面向对象开发</h2><p>C++ 的风格是面向对象编程，把程序看作一组对象，对象有自己的属性和行为。就像开餐厅，餐厅里有厨师、服务员、顾客等对象。每个对象都有自己的职责：</p>
+<ul>
+<li>厨师：负责做菜。</li>
+<li>服务员：负责上菜。</li>
+<li>顾客：负责点菜和吃饭。</li>
+</ul>
+<p>其实有点像 python 中一个个类</p>
+<p>它的程序由类和对象组成，数据（属性）和操作（方法）封装在一起，适合复杂的系统，易于扩展和维护。</p>
+<h2 id="C-的面向对象特性"><a href="#C-的面向对象特性" class="headerlink" title="C++ 的面向对象特性"></a><strong>C++ 的面向对象特性</strong></h2><p>C++ 支持面向对象编程，主要有以下特性：</p>
+<h3 id="类（Class）"><a href="#类（Class）" class="headerlink" title="类（Class）"></a><strong>类（Class）</strong></h3><ul>
+<li>类是对象的模板，定义了对象的属性和行为。</li>
+<li>比如，<code>Dog</code> 类可以有属性 <code>name</code> 和方法 <code>bark()</code>。</li>
+</ul>
+<h3 id="封装（Encapsulation）"><a href="#封装（Encapsulation）" class="headerlink" title="封装（Encapsulation）"></a><strong>封装（Encapsulation）</strong></h3><ul>
+<li>把数据和方法封装在一起，隐藏内部细节。</li>
+<li>比如，你不需要知道手机内部如何工作，只需要知道怎么用。</li>
+</ul>
+<h3 id="继承（Inheritance）"><a href="#继承（Inheritance）" class="headerlink" title="继承（Inheritance）"></a><strong>继承（Inheritance）</strong></h3><ul>
+<li>一个类可以继承另一个类的特性。</li>
+<li>比如，<code>Cat</code> 和 <code>Dog</code> 都可以继承 <code>Animal</code> 类的特性。</li>
+</ul>
+<h3 id="多态（Polymorphism）"><a href="#多态（Polymorphism）" class="headerlink" title="多态（Polymorphism）"></a><strong>多态（Polymorphism）</strong></h3><ul>
+<li>同一个方法在不同对象中有不同的行为。</li>
+<li>比如，<code>Animal</code> 类的 <code>speak()</code> 方法，<code>Dog</code> 会“汪汪”，<code>Cat</code> 会“喵喵”。</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li><strong>C</strong>：面向过程，适合底层开发，代码简单直接。</li>
+<li><strong>C++</strong>：支持面向对象，适合大型项目，代码更易扩展和维护。</li>
+<li><strong>面向过程</strong>：关注步骤和流程。</li>
+<li><strong>面向对象</strong>：关注对象和它们之间的关系。</li>
+</ul>
+<h1 id="C-基本语法"><a href="#C-基本语法" class="headerlink" title="C++ 基本语法"></a>C++ 基本语法</h1><p>由于我大一的时候基本熟练掌握了 C 语言，对于接下来的 C++基本语法我们简单的来看看吧</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2025/02/06/Nomachine%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1183,7 +1281,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
