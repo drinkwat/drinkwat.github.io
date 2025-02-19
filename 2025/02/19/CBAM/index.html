@@ -22,19 +22,22 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="纳于大麓，烈风雷雨弗迷">
-<meta property="og:type" content="website">
-<meta property="og:title" content="分类">
-<meta property="og:url" content="http://example.com/categories/index.html">
+  <meta name="description" content="前言主要介绍 CBAM: 通道注意力和空间注意力的集成者 注意力机制把注意力聚集在图像重要区域而丢弃掉不相关的方法。 这个过程是由对于特征自适应权重实现的 注意力机制通常被分为基本四大类：  通道注意力 Channel Attention，告诉网络 what to pay attention to 空间注意力机制 Spatial Attention，告诉网络 where to pay attent">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CBAM">
+<meta property="og:url" content="http://example.com/2025/02/19/CBAM/index.html">
 <meta property="og:site_name">
-<meta property="og:description" content="纳于大麓，烈风雷雨弗迷">
+<meta property="og:description" content="前言主要介绍 CBAM: 通道注意力和空间注意力的集成者 注意力机制把注意力聚集在图像重要区域而丢弃掉不相关的方法。 这个过程是由对于特征自适应权重实现的 注意力机制通常被分为基本四大类：  通道注意力 Channel Attention，告诉网络 what to pay attention to 空间注意力机制 Spatial Attention，告诉网络 where to pay attent">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-02-04T13:54:59.000Z">
-<meta property="article:modified_time" content="2025-02-04T13:56:12.928Z">
+<meta property="og:image" content="http://example.com/images/image-20250219104759240.png">
+<meta property="article:published_time" content="2025-02-19T02:26:10.000Z">
+<meta property="article:modified_time" content="2025-02-19T07:12:54.919Z">
 <meta property="article:author" content="drinkwat">
+<meta property="article:tag" content="深度学习">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/image-20250219104759240.png">
 
-<link rel="canonical" href="http://example.com/categories/">
+<link rel="canonical" href="http://example.com/2025/02/19/CBAM/">
 
 
 <script id="page-configurations">
@@ -42,13 +45,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>分类 | null
-</title>
+  <title>CBAM | </title>
   
 
 
@@ -166,51 +168,130 @@
       <div class="main-inner">
         <div class="content-wrap">
           
-  
-  
 
-          <div class="content page posts-expand">
+          <div class="content post posts-expand">
             
 
     
-    
-    
-    <div class="post-block" lang="zh-CN">
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/02/19/CBAM/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="drinkwat">
+      <meta itemprop="description" content="纳于大麓，烈风雷雨弗迷">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="">
+    </span>
       <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          CBAM
+        </h1>
 
-<h1 class="post-title" itemprop="name headline">分类
-</h1>
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
 
-<div class="post-meta">
+              <time title="创建时间：2025-02-19 10:26:10 / 修改时间：15:12:54" itemprop="dateCreated datePublished" datetime="2025-02-19T10:26:10+08:00">2025-02-19</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>主要介绍 CBAM: 通道注意力和空间注意力的集成者</p>
+<h2 id="注意力机制"><a href="#注意力机制" class="headerlink" title="注意力机制"></a>注意力机制</h2><p>把注意力聚集在图像重要区域而丢弃掉不相关的方法。</p>
+<p>这个过程是由对于特征自适应权重实现的</p>
+<p>注意力机制通常被分为基本四大类：</p>
+<ul>
+<li><strong>通道注意力 Channel Attention</strong>，告诉网络 what to pay attention to</li>
+<li><strong>空间注意力机制 Spatial Attention</strong>，告诉网络 where to pay attention to</li>
+<li><strong>时间注意力机制 Temporal Attention</strong>，告诉网络 when to pay attention</li>
+<li><strong>分支注意力机制 Branch Attention</strong>，告诉网络 which to pay attention to</li>
+</ul>
+<p>最后还有两种混合注意力机制：</p>
+<ul>
+<li><strong>通道&amp;空间注意力机制</strong></li>
+<li><strong>空间&amp;时间注意力机制</strong></li>
+</ul>
+<h2 id="CBAM"><a href="#CBAM" class="headerlink" title="CBAM"></a>CBAM</h2><p><strong>通道&amp;空间注意力机制</strong></p>
+<p>在给定一张特征图，CBAM 模块能够序列化地在 <strong>通道</strong> 和 <strong>空间</strong> 两个维度上产生注意力特征图信息，然后两种特征图信息在与之前原输入特征图进行相乘进行自适应特征修正，产生最后的特征图。CBAM 是一种轻量级的模块，可以嵌入到任何主干网络中以提高性能。</p>
+<h3 id="设计启发"><a href="#设计启发" class="headerlink" title="设计启发"></a>设计启发</h3><p>当前主要研究：</p>
+<ul>
+<li><strong>网络的深度</strong></li>
+<li><strong>网络的宽度</strong></li>
+<li><strong>网络的维度</strong></li>
+</ul>
+<p>深度研究：Lenet VGGNet ResNet</p>
+<p>宽度研究： <strong>GoogLeNet</strong> 中的 <strong>Inception</strong> 模块</p>
+<p>维度研究： <strong>Xception</strong> <strong>ResNeXt</strong></p>
+<p>注意力机制的主要目的：</p>
+<p>聚焦图像的重要特征，抑制不必要的区域响应</p>
+<p>（我个人觉得就是滤波）</p>
+<p>我们在在对<strong>通道维度</strong>和<strong>空间维度</strong>组合分析研究，提出了CBAM模块，并证实了网络的性能的提升来自于精确的注意力机制和对无相关噪声信息的抑制。</p>
+<h3 id="总体流程"><a href="#总体流程" class="headerlink" title="总体流程"></a>总体流程</h3><p>CBAM（Convolutional Block Attention Module）是一种结合通道注意力和空间注意力的轻量级模块，通过动态调整特征图的通道和空间权重来增强模型的特征表达能力。其核心由两个子模块组成：</p>
+<ul>
+<li>通道注意力模块（Channel Attention Module, CAM）</li>
+<li>空间注意力模块（Spatial Attention Module, SAM）<br><img src="/../images/image-20250219104759240.png" alt="image-20250219104759240"></li>
+</ul>
+<h4 id="CAM"><a href="#CAM" class="headerlink" title="CAM"></a>CAM</h4><p>输入：特征图<br>输出： 通道注意力权重</p>
+<p>实现步骤：</p>
+<ol>
+<li>全局池化</li>
+<li>共享 MLP</li>
+<li>权重融合</li>
+</ol>
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/510223283">CBAM: 通道注意力和空间注意力的集成者 - 知乎</a></p>
+<h1 id="不懂的地方"><a href="#不懂的地方" class="headerlink" title="不懂的地方"></a>不懂的地方</h1><p>注意力机制是什么</p>
+<p>CNN 是什么</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" rel="tag"># 深度学习</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2025/02/19/%E6%97%A5%E8%AE%B0-2-19/" rel="prev" title="日记-2-19">
+      <i class="fa fa-chevron-left"></i> 日记-2-19
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2025/02/19/%E8%BF%AA%E5%93%A5/" rel="next" title="迪哥">
+      迪哥 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
-          <div class="category-all-page">
-            <div class="category-all-title">
-              暂无分类
-            </div>
-            <div class="category-all">
-              
-            </div>
-          </div>
-        
-      </div>
-      
-      
-      
-    </div>
-    
-
-    
-    
-    
 
 
           </div>
@@ -261,6 +342,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6"><span class="nav-number">1.1.</span> <span class="nav-text">注意力机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CBAM"><span class="nav-number">1.2.</span> <span class="nav-text">CBAM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E5%90%AF%E5%8F%91"><span class="nav-number">1.2.1.</span> <span class="nav-text">设计启发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E4%BD%93%E6%B5%81%E7%A8%8B"><span class="nav-number">1.2.2.</span> <span class="nav-text">总体流程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CAM"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">CAM</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="nav-number">2.</span> <span class="nav-text">参考链接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%8D%E6%87%82%E7%9A%84%E5%9C%B0%E6%96%B9"><span class="nav-number">3.</span> <span class="nav-text">不懂的地方</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
