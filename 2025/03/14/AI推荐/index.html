@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="deepseekDeepSeek App 是一款由杭州深度求索公司研发的智能助手类应用，基于先进的大语言模型技术（如 DeepSeek-R1 模型），专注于提供专业级的数据处理、内容创作和复杂问题解答服务。 它目前是国内开发出的世界最强大开源 AI 模型  获取方式deepseek 可以跨平台使用，主要有两个方式：  电脑端（浏览器 ） 手机端  电脑端主要是在电脑端浏览器使用 首先打开浏览器">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AI推荐">
+<meta property="og:url" content="http://example.com/2025/03/14/AI%E6%8E%A8%E8%8D%90/index.html">
+<meta property="og:site_name">
+<meta property="og:description" content="deepseekDeepSeek App 是一款由杭州深度求索公司研发的智能助手类应用，基于先进的大语言模型技术（如 DeepSeek-R1 模型），专注于提供专业级的数据处理、内容创作和复杂问题解答服务。 它目前是国内开发出的世界最强大开源 AI 模型  获取方式deepseek 可以跨平台使用，主要有两个方式：  电脑端（浏览器 ） 手机端  电脑端主要是在电脑端浏览器使用 首先打开浏览器">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/images/image-20250314093329763.png">
+<meta property="og:image" content="http://example.com/images/image-20250314093641517.png">
+<meta property="og:image" content="http://example.com/images/image-20250314093743561.png">
+<meta property="og:image" content="http://example.com/images/image-20250314093813854.png">
+<meta property="og:image" content="http://example.com/images/image-20250314093853613.png">
+<meta property="og:image" content="http://example.com/images/image-20250314093941359.png">
+<meta property="og:image" content="http://example.com/images/image-20250314094118295.png">
+<meta property="og:image" content="http://example.com/images/image-20250314094140443.png">
+<meta property="og:image" content="http://example.com/images/image-20250314094238010.png">
+<meta property="og:image" content="http://example.com/images/Screenshot_2025-03-14-09-43-18-736_com.android.mm.jpg">
+<meta property="og:image" content="http://example.com/images/image-20250314094410161.png">
+<meta property="og:image" content="http://example.com/images/image-20250314094501921.png">
+<meta property="og:image" content="http://example.com/images/Screenshot_2025-03-14-09-53-51-481_com.xiaomi.mar.jpg">
+<meta property="og:image" content="http://example.com/images/Screenshot_2025-03-14-09-54-58-126_com.xiaomi.mar.jpg">
+<meta property="og:image" content="http://example.com/images/Screenshot_2025-03-14-09-55-09-483_com.xiaomi.mar.jpg">
+<meta property="og:image" content="http://example.com/images/Screenshot_2025-03-14-09-55-19-698_com.xiaomi.mar.jpg">
+<meta property="og:image" content="http://example.com/images/Screenshot_2025-03-14-09-55-29-423_com.deepseek.c.jpg">
+<meta property="og:image" content="http://example.com/images/Screenshot_2025-03-14-09-55-33-012_com.deepseek.c.jpg">
+<meta property="og:image" content="http://example.com/images/Screenshot_2025-03-14-09-56-48-813_com.deepseek.c.jpg">
+<meta property="og:image" content="http://example.com/images/Screenshot_2025-03-14-09-56-43-782_com.deepseek.c.jpg">
+<meta property="og:image" content="http://example.com/images/Screenshot_2025-03-14-09-56-54-476_com.deepseek.c.jpg">
+<meta property="og:image" content="http://example.com/images/Screenshot_2025-03-14-09-57-15-265_com.deepseek.c.jpg">
+<meta property="og:image" content="http://example.com/images/image-20250314101235341.png">
+<meta property="og:image" content="http://example.com/images/image-20250314101413826.png">
+<meta property="og:image" content="http://example.com/images/image-20250314101437436.png">
+<meta property="og:image" content="http://example.com/images/image-20250314101510150.png">
+<meta property="og:image" content="http://example.com/images/image-20250314101530995.png">
+<meta property="og:image" content="http://example.com/images/image-20250314101851666.png">
+<meta property="og:image" content="http://example.com/images/image-20250314103941656.png">
+<meta property="article:published_time" content="2025-03-14T01:17:42.000Z">
+<meta property="article:modified_time" content="2025-03-14T04:46:04.695Z">
+<meta property="article:author" content="drinkwat">
+<meta property="article:tag" content="教程">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/image-20250314093329763.png">
+
+<link rel="canonical" href="http://example.com/2025/03/14/AI%E6%8E%A8%E8%8D%90/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>AI推荐 | </title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title"></h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">饮冰居士</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-resources">
+
+    <a href="/resources/" rel="section"><i class="download fa-fw"></i>资源</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/03/14/AI%E6%8E%A8%E8%8D%90/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="drinkwat">
+      <meta itemprop="description" content="忍耐，不是就认输了，是信仰，是信念，是想得开，是挺的住！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          AI推荐
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2025-03-14 09:17:42 / 修改时间：12:46:04" itemprop="dateCreated datePublished" datetime="2025-03-14T09:17:42+08:00">2025-03-14</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="deepseek"><a href="#deepseek" class="headerlink" title="deepseek"></a>deepseek</h2><p>DeepSeek App 是一款由杭州深度求索公司研发的智能助手类应用，基于先进的大语言模型技术（如 DeepSeek-R1 模型），专注于提供专业级的数据处理、内容创作和复杂问题解答服务。</p>
+<p><strong>它目前是国内开发出的世界最强大开源 AI 模型</strong></p>
+<p><img src="/../images/image-20250314093329763.png" alt="image-20250314093329763"></p>
+<h3 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h3><p>deepseek 可以跨平台使用，主要有两个方式：</p>
+<ul>
+<li>电脑端（浏览器 ）</li>
+<li>手机端</li>
+</ul>
+<h4 id="电脑端"><a href="#电脑端" class="headerlink" title="电脑端"></a>电脑端</h4><p>主要是在电脑端浏览器使用</p>
+<p>首先打开浏览器</p>
+<p><img src="/../images/image-20250314093641517.png" alt="image-20250314093641517"></p>
+<p>接着在网页搜索 deepseek 官网网址,</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://www.deepseek.com/</span><br></pre></td></tr></table></figure>
+
+<p><img src="/../images/image-20250314093743561.png" alt="image-20250314093743561"></p>
+<p>按下回车键，进行官网页面</p>
+<p><img src="/../images/image-20250314093813854.png" alt="image-20250314093813854"></p>
+<p>接着我们点击开启对话</p>
+<p><img src="/../images/image-20250314093853613.png" alt="image-20250314093853613"></p>
+<p>这个时候网页跳转到用户注册页面</p>
+<ul>
+<li>电话号码注册</li>
+<li>微信扫码登录</li>
+</ul>
+<p>在这里我们演示电话号码注册</p>
+<p><img src="/../images/image-20250314093941359.png" alt="image-20250314093941359"></p>
+<p>首先输入手机电话号码，接着点击发送验证码</p>
+<p><img src="/../images/image-20250314094118295.png" alt="image-20250314094118295"></p>
+<p>接着网页跳转到智能验证阶段，主要是为了检测当前用户是否是机器人</p>
+<p><img src="/../images/image-20250314094140443.png" alt="image-20250314094140443"></p>
+<p>验证成功后，网页会自动发送验证码到手机端，我们查看验证码，并输入到网页</p>
+<p><img src="/../images/image-20250314094238010.png" alt="image-20250314094238010"></p>
+<p><img src="/../images/Screenshot_2025-03-14-09-43-18-736_com.android.mm.jpg" alt="Screenshot_2025-03-14-09-43-18-736_com.android.mm"></p>
+<p>输入验证码后，点击我已阅读并同意用户协议，接着点击登录按钮</p>
+<p><img src="/../images/image-20250314094410161.png" alt="image-20250314094410161"></p>
+<p>此时我们就可以正常使用 deepseek 了</p>
+<p><img src="/../images/image-20250314094501921.png" alt="image-20250314094501921"></p>
+<h4 id="手机端"><a href="#手机端" class="headerlink" title="手机端"></a>手机端</h4><ul>
+<li>下载软件</li>
+<li>注册账户</li>
+</ul>
+<ol>
+<li>下载软件</li>
+</ol>
+<p>我们主要是在官方的应用商店下载该软件</p>
+<p>首先进入应用商店</p>
+<p><img src="/../images/Screenshot_2025-03-14-09-53-51-481_com.xiaomi.mar.jpg" alt="Screenshot_2025-03-14-09-53-51-481_com.xiaomi.mar"></p>
+<p>接着在搜索 deepseek，点击安装</p>
+<p><img src="/../images/Screenshot_2025-03-14-09-54-58-126_com.xiaomi.mar.jpg" alt="Screenshot_2025-03-14-09-54-58-126_com.xiaomi.mar"></p>
+<p>安装成功后，我们打开 deepseek</p>
+<p><img src="/../images/Screenshot_2025-03-14-09-55-09-483_com.xiaomi.mar.jpg" alt="Screenshot_2025-03-14-09-55-09-483_com.xiaomi.mar"></p>
+<p><img src="/../images/Screenshot_2025-03-14-09-55-19-698_com.xiaomi.mar.jpg" alt="Screenshot_2025-03-14-09-55-19-698_com.xiaomi.mar"></p>
+<p>点击同意用户协议</p>
+<p><img src="/../images/Screenshot_2025-03-14-09-55-29-423_com.deepseek.c.jpg" alt="Screenshot_2025-03-14-09-55-29-423_com.deepseek.c"></p>
+<p>使用验证码登录，方法和网页版一致</p>
+<p><img src="/../images/Screenshot_2025-03-14-09-55-33-012_com.deepseek.c.jpg" alt="Screenshot_2025-03-14-09-55-33-012_com.deepseek.c"></p>
+<p>首先我们输入电话号码，并点击发送验证码</p>
+<p><img src="/../images/Screenshot_2025-03-14-09-56-48-813_com.deepseek.c.jpg" alt="Screenshot_2025-03-14-09-56-48-813_com.deepseek.c"></p>
+<p>接着手机自动进入验证阶段，成功完成验证，后台会自动发送验证码</p>
+<p><img src="/../images/Screenshot_2025-03-14-09-56-43-782_com.deepseek.c.jpg" alt="Screenshot_2025-03-14-09-56-43-782_com.deepseek.c"></p>
+<p><img src="/../images/Screenshot_2025-03-14-09-56-54-476_com.deepseek.c.jpg" alt="Screenshot_2025-03-14-09-56-54-476_com.deepseek.c"></p>
+<p>我们输入验证码，即可以正常使用</p>
+<p><img src="/../images/Screenshot_2025-03-14-09-57-15-265_com.deepseek.c.jpg" alt="Screenshot_2025-03-14-09-57-15-265_com.deepseek.c"></p>
+<h3 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h3><p>目前 deepseek 在长文本对话上的能力很强，但是在识图和处理文件的方面明显弱于 openai 等模型</p>
+<p><img src="/../images/image-20250314101235341.png" alt="image-20250314101235341"></p>
+<p>主要使用方式：</p>
+<ul>
+<li>深度思考</li>
+<li>联网搜索</li>
+<li>深度思考 + 联网搜索</li>
+<li>普通使用</li>
+</ul>
+<h4 id="深度思考（复杂推理与创作）"><a href="#深度思考（复杂推理与创作）" class="headerlink" title="深度思考（复杂推理与创作）"></a>深度思考（复杂推理与创作）</h4><p><strong>优势</strong>：</p>
+<ul>
+<li><strong>长文本连贯性</strong>：擅长处理多轮对话、长篇幅逻辑推导（如学术分析、故事创作），上下文记忆优于多数模型。</li>
+<li><strong>结构化输出</strong>：可生成清晰框架的报告、代码或解决方案，逻辑层次分明。</li>
+<li><strong>文化适配性</strong>：对中文语境理解更深，尤其在文史哲、本土化内容创作上表现突出。</li>
+</ul>
+<p><strong>局限</strong>：</p>
+<ul>
+<li><strong>依赖文本输入</strong>：无法直接分析图像、表格或文件内容（需用户文字描述）。</li>
+<li><strong>实时性弱</strong>：知识库截止训练时间点，无法主动获取最新信息（需结合联网搜索）。</li>
+</ul>
+<p>场景举例：论文大纲撰写、代码 Debug、商业策略分析。</p>
+<h4 id="联网搜索（实时信息获取）"><a href="#联网搜索（实时信息获取）" class="headerlink" title="联网搜索（实时信息获取）"></a><strong>联网搜索（实时信息获取）</strong></h4><p>优势：</p>
+<ul>
+<li>弥补知识时效性：通过联网插件获取新闻、股价、学术进展等最新动态。</li>
+<li>精准检索：可指定搜索范围（如特定网站、时间段），提高信息可信度。</li>
+</ul>
+<p>局限：</p>
+<ul>
+<li>依赖外部工具：需通过 API 或插件接入搜索引擎，响应速度受网络影响。</li>
+<li>信息过载风险：需用户明确需求，否则可能返回冗余内容。</li>
+</ul>
+<p>场景举例：实时事件追踪、竞品数据对比、旅游攻略更新。</p>
+<h4 id="深度思考-联网搜索（复合型任务）"><a href="#深度思考-联网搜索（复合型任务）" class="headerlink" title="深度思考 + 联网搜索（复合型任务）"></a><strong>深度思考 + 联网搜索（复合型任务）</strong></h4><p><strong>优势</strong>：</p>
+<ul>
+<li><strong>动态知识整合</strong>：先检索最新数据，再基于结果进行深度分析（如市场趋势预测）。</li>
+<li><strong>多步骤任务自动化</strong>：自动完成“搜索 → 筛选 → 推理 → 输出”全流程，减少人工干预。</li>
+</ul>
+<p><strong>局限</strong>：</p>
+<ul>
+<li><strong>复杂度高</strong>：需精确设计 Prompt 以协调搜索与分析环节，调试成本较高。</li>
+<li><strong>算力消耗大</strong>：长文本生成+多轮检索可能导致响应延迟。</li>
+</ul>
+<p><strong>场景举例</strong>：行业研究报告生成、突发事件影响评估。</p>
+<h4 id="普通使用（日常对话与简单问答）"><a href="#普通使用（日常对话与简单问答）" class="headerlink" title="普通使用（日常对话与简单问答）"></a><strong>普通使用（日常对话与简单问答）</strong></h4><p><strong>优势</strong>：</p>
+<ul>
+<li><strong>响应速度快</strong>：对简单问题（如定义解释、生活建议）回复直接高效。</li>
+<li><strong>多语言支持</strong>：中英文切换流畅，适合基础跨语言交流。</li>
+</ul>
+<p><strong>局限</strong>：</p>
+<ul>
+<li><strong>功能单一性</strong>：无法处理需图像识别、文件解析的任务（如翻译图片文字、总结 PDF）。</li>
+<li><strong>答案泛化</strong>：对模糊提问可能返回笼统回答，需用户进一步细化需求。</li>
+</ul>
+<p><strong>场景举例</strong>：单词翻译、日程建议、趣味闲聊。</p>
+<h4 id="总结建议"><a href="#总结建议" class="headerlink" title="总结建议"></a><strong>总结建议</strong></h4><ul>
+<li><strong>优先选 DeepSeek</strong>：长文本创作、中文深度分析、高性价比场景。</li>
+<li><strong>搭配其他工具</strong>：需识图&#x2F;文件处理时，可用 GPT-4+Vision 或专用 OCR 工具预处理，再输入 DeepSeek 分析。</li>
+<li><strong>组合使用模式</strong>：日常问答用普通模式，专业任务用“深度思考+联网”组合，实现效率最大化。</li>
+</ul>
+<h4 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h4><p>这是正常输入界面（普通使用模式）</p>
+<p><img src="/../images/image-20250314101413826.png" alt="image-20250314101413826"></p>
+<p>选中深度思考</p>
+<p><img src="/../images/image-20250314101437436.png" alt="image-20250314101437436"></p>
+<p>选中联网搜索</p>
+<p><img src="/../images/image-20250314101510150.png" alt="image-20250314101510150"></p>
+<p>深度思考 + 联网搜索</p>
+<p><img src="/../images/image-20250314101530995.png" alt="image-20250314101530995"></p>
+<p>一般认为，普通模式下输出的效果一般，但是它的响应速度很快，如果是处理简单的日常任务，优先选择 普通模式</p>
+<p>深度思考下的回答感觉确实很强，但是它响应的很慢，可能要 10 秒-20 多秒才能输出回答。</p>
+<p>联网模式下主要是获取最新的信息</p>
+<p>我一般是选择深度思考 + 联网搜索</p>
+<p>这是我在选择深度思考 + 联网搜索的回答</p>
+<p><img src="/../images/image-20250314101851666.png" alt="image-20250314101851666"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">Sichuan Snacks: A Fiery Culinary Adventure</span><br><span class="line"></span><br><span class="line">Sichuan, a province in southwest China, is renowned for its bold and addictive street food culture. Sichuan snacks, characterized by their &quot;mala&quot; (numbing and spicy) flavor profile, offer an unforgettable gastronomic journey.</span><br><span class="line"></span><br><span class="line">Start with Dandan Noodles, a humble yet iconic dish featuring springy wheat noodles tossed in chili oil, minced pork, and Sichuan peppercorns. Equally popular is Chuanchuan Xiang (hot pot skewers), where diners cook skewered meats and vegetables in a bubbling, fiery broth. For something crispy, try Zhong Dumplings—delicate wrappers filled with pork, drenched in a sweet-spicy garlic sauce. Don’t miss Lai Tang Yuan (glutinous rice balls), a sweet contrast stuffed with black sesame or red bean paste.</span><br><span class="line"></span><br><span class="line">Sichuan snacks are more than just food; they embody the region’s love for intense flavors and communal dining. Street vendors and night markets, like Chengdu’s Jinli Street, buzz with locals and tourists savoring these treats. Each bite tells a story of tradition, innovation, and Sichuan’s unapologetic zest for life.</span><br><span class="line"></span><br><span class="line">From tongue-tingling spices to comforting sweetness, Sichuan’s snack culture is a must-experience for any food lover. Come hungry, and leave with a newfound addiction to the &quot;mala&quot; magic!</span><br><span class="line"></span><br><span class="line">(198 words)</span><br><span class="line"></span><br><span class="line">这篇文章以生动的语言和紧凑的结构：</span><br><span class="line"></span><br><span class="line">突出四川小吃&quot;麻辣&quot;核心特色</span><br><span class="line"></span><br><span class="line">精选4种代表性小吃（担担面、串串香、钟水饺、赖汤圆）</span><br><span class="line"></span><br><span class="line">融入文化元素（夜市文化、饮食哲学）</span><br><span class="line"></span><br><span class="line">使用英文读者熟悉的对比描述（sweet-spicy, comforting sweetness等）</span><br><span class="line"></span><br><span class="line">保持口语化感染力，符合国际传播需求</span><br></pre></td></tr></table></figure>
+
+<p>（啥时候我能写出这样的文章就好了）</p>
+<h3 id="腾讯元宝"><a href="#腾讯元宝" class="headerlink" title="腾讯元宝"></a>腾讯元宝</h3><p>deepseek 确实很香，作为世界级领先的AI 开源模型，但是它太好用了，使用它的人特别多，这就导致了它的<strong>服务器经常崩溃，</strong></p>
+<p><img src="/../images/image-20250314103941656.png" alt="image-20250314103941656"> </p>
+<p>在这里我给老师您推荐一个基于DeepSeek的国内主流软件——腾信元宝，用起来也是很方便</p>
+<p>​	<strong>腾讯元宝</strong>作为腾讯AI助手旗舰产品，支持免费使用<strong>DeepSeek-R1满血版模型</strong>（671B参数），提供复杂问题的拆解式解答，适合学术研究、商业分析等深度场景。其优化后的推理效率在腾讯云算力支持下，响应速度更快，稳定性强。</p>
+<p>​	使用方式和前面介绍的deepseek <strong>使用方式一致：</strong></p>
+<ul>
+<li>电脑端</li>
+<li>手机端</li>
+</ul>
+<ol>
+<li>电脑端：只需要打开浏览器，输入网址:<a href="https://link.zhihu.com/?target=https://yuanbao.tencent.com/">https://yuanbao.tencent.com/</a> 就能进入腾讯元宝的界面，进入后，登录就可以使用了</li>
+<li>手机端：<strong>应用商店下载</strong>：在手机的应用商店（如苹果 App Store 或安卓的应用商店）中，搜索我的应用名称，然后点击下载安装。安装完成后，根据提示进行注册登录或直接使用。</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%95%99%E7%A8%8B/" rel="tag"># 教程</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2025/03/07/%E6%88%91%E7%9A%84%E5%B0%8F%E6%99%BA/" rel="prev" title="我的小智">
+      <i class="fa fa-chevron-left"></i> 我的小智
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2025/03/15/%E8%80%83%E7%A0%94%E7%AC%AC%E4%B8%80%E9%98%B6%E6%AE%B5%E8%AE%A1%E5%88%92%E6%80%BB%E7%BB%93/" rel="next" title="考研第一阶段计划总结">
+      考研第一阶段计划总结 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#deepseek"><span class="nav-number">1.</span> <span class="nav-text">deepseek</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E6%96%B9%E5%BC%8F"><span class="nav-number">1.1.</span> <span class="nav-text">获取方式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%B5%E8%84%91%E7%AB%AF"><span class="nav-number">1.1.1.</span> <span class="nav-text">电脑端</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%89%8B%E6%9C%BA%E7%AB%AF"><span class="nav-number">1.1.2.</span> <span class="nav-text">手机端</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F"><span class="nav-number">1.2.</span> <span class="nav-text">使用方式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B7%B1%E5%BA%A6%E6%80%9D%E8%80%83%EF%BC%88%E5%A4%8D%E6%9D%82%E6%8E%A8%E7%90%86%E4%B8%8E%E5%88%9B%E4%BD%9C%EF%BC%89"><span class="nav-number">1.2.1.</span> <span class="nav-text">深度思考（复杂推理与创作）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%81%94%E7%BD%91%E6%90%9C%E7%B4%A2%EF%BC%88%E5%AE%9E%E6%97%B6%E4%BF%A1%E6%81%AF%E8%8E%B7%E5%8F%96%EF%BC%89"><span class="nav-number">1.2.2.</span> <span class="nav-text">联网搜索（实时信息获取）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B7%B1%E5%BA%A6%E6%80%9D%E8%80%83-%E8%81%94%E7%BD%91%E6%90%9C%E7%B4%A2%EF%BC%88%E5%A4%8D%E5%90%88%E5%9E%8B%E4%BB%BB%E5%8A%A1%EF%BC%89"><span class="nav-number">1.2.3.</span> <span class="nav-text">深度思考 + 联网搜索（复合型任务）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%99%AE%E9%80%9A%E4%BD%BF%E7%94%A8%EF%BC%88%E6%97%A5%E5%B8%B8%E5%AF%B9%E8%AF%9D%E4%B8%8E%E7%AE%80%E5%8D%95%E9%97%AE%E7%AD%94%EF%BC%89"><span class="nav-number">1.2.4.</span> <span class="nav-text">普通使用（日常对话与简单问答）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%BB%E7%BB%93%E5%BB%BA%E8%AE%AE"><span class="nav-number">1.2.5.</span> <span class="nav-text">总结建议</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8"><span class="nav-number">1.2.6.</span> <span class="nav-text">如何使用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%85%BE%E8%AE%AF%E5%85%83%E5%AE%9D"><span class="nav-number">1.3.</span> <span class="nav-text">腾讯元宝</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="drinkwat"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">drinkwat</p>
+  <div class="site-description" itemprop="description">忍耐，不是就认输了，是信仰，是信念，是想得开，是挺的住！</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/yourname" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yourname@gmail.com" title="E-Mail → mailto:yourname@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/mai-nv-hai-de-xiao-huo-chai-35-19" title="知乎 → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;mai-nv-hai-de-xiao-huo-chai-35-19" rel="noopener" target="_blank"><i class="gratipay fa-fw"></i>知乎</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://https//blog.csdn.net/Later_001" title="CSDN → https:&#x2F;&#x2F;https:&#x2F;&#x2F;blog.csdn.net&#x2F;Later_001" rel="noopener" target="_blank"><i class="codiepie fa-fw"></i>CSDN</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://baidu.com/" title="https:&#x2F;&#x2F;baidu.com" rel="noopener" target="_blank">百度</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://fishc.com.cn/" title="https:&#x2F;&#x2F;fishc.com.cn" rel="noopener" target="_blank">鱼C论坛</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2025-02 – 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">drinkwat</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
