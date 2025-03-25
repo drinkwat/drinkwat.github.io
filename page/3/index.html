@@ -170,6 +170,182 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/02/05/Python%E9%85%8D%E7%BD%AE%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="drinkwat">
+      <meta itemprop="description" content="忍耐，不是就认输了，是信仰，是信念，是想得开，是挺的住！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/02/05/Python%E9%85%8D%E7%BD%AE%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/" class="post-title-link" itemprop="url">Python配置虚拟环境</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2025-02-05 15:27:21" itemprop="dateCreated datePublished" datetime="2025-02-05T15:27:21+08:00">2025-02-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-03-07 17:01:26" itemprop="dateModified" datetime="2025-03-07T17:01:26+08:00">2025-03-07</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>很久之前写的存货了，一直没发</p>
+<h2 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h2><h3 id="安装-vscode"><a href="#安装-vscode" class="headerlink" title="安装 vscode"></a>安装 vscode</h3><p>Pycharm 体积过大，而且兼容性也不如 VScode，所以优先安装 VScode</p>
+<ul>
+<li>官网链接：<a target="_blank" rel="noopener" href="https://code.visualstudio.com/download">https://code.visualstudio.com/download</a></li>
+</ul>
+<p><img src="/../images/image-20240921111035413.png" alt="image-20240921111035413"></p>
+<p>选择自己系统对应的下载链接</p>
+<p>安装成功后，安装 Python 相关插件</p>
+<p><img src="/../images/image-20240921111232406.png" alt="image-20240921111232406"></p>
+<p>也可以选择汉化</p>
+<p><img src="/../images/image-20240921111306954.png" alt="image-20240921111306954"></p>
+<p>建议安装 C++插件</p>
+<p><img src="/../images/image-20240921111334412.png" alt="image-20240921111334412"></p>
+<h3 id="安装-miniconda"><a href="#安装-miniconda" class="headerlink" title="安装 miniconda"></a>安装 miniconda</h3><p>我觉得 Anaconda 太大了，而且它的图形化界面我也不喜欢，操作起来也比较慢，在这里推荐使用 miniconda</p>
+<ul>
+<li>官网链接：<a target="_blank" rel="noopener" href="https://docs.anaconda.com/miniconda/">Miniconda — Anaconda documentation</a></li>
+</ul>
+<p><img src="/../images/image-20240921111748291.png" alt="image-20240921111748291"></p>
+<p>选择自己系统对应的下载链接</p>
+<p>官网可能比较卡，推荐使用镜像源</p>
+<ul>
+<li>清华镜像：<a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/">Index of &#x2F;anaconda&#x2F;miniconda&#x2F; | 清华大学开源软件镜像站 | Tsinghua Open Source Mirror</a></li>
+</ul>
+<p><img src="/../images/image-20240921111904644.png" alt="image-20240921111904644"></p>
+<p>默认安装，注意这一步要勾选环境变量</p>
+<p><img src="https://i-blog.csdnimg.cn/direct/a18a9819a9654d60b784785a25ca530c.png" alt="img"></p>
+<ul>
+<li>验证是否安装成功：</li>
+</ul>
+<p>在菜单栏中直接打开或搜索 Anaconda Prompt</p>
+<p><img src="/../images/image-20240921112107232.png" alt="image-20240921112107232"></p>
+<p><img src="/../images/image-20240921112134243.png" alt="image-20240921112134243"></p>
+<p>安装成功</p>
+<ul>
+<li>查看 conda 版本</li>
+</ul>
+<p>在终端输入命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda --version</span><br></pre></td></tr></table></figure>
+
+<p><img src="/../images/image-20240921112640115.png" alt="image-20240921112640115"></p>
+<h3 id="配置虚拟环境"><a href="#配置虚拟环境" class="headerlink" title="配置虚拟环境"></a>配置虚拟环境</h3><p>虚拟环境，就是把我们安装的 python 包集成化起来，环境与环境之间不会相互影响，人性化管理</p>
+<ul>
+<li><p>打开 Anaconda Prompt，后续操作都在这个终端进行</p>
+<p><img src="/../images/image-20240921112743512.png" alt="image-20240921112743512"></p>
+</li>
+</ul>
+<ol>
+<li><p>创建虚拟环境</p>
+<p>python建议使用 3.9 版本，版本太高，后续配其他包时会出现 bug</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda create -n text python=3.9</span><br></pre></td></tr></table></figure>
+
+<p><img src="/../images/image-20240921113044910.png" alt="image-20240921113044910"></p>
+</li>
+<li><p>激活虚拟环境</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda activate text</span><br></pre></td></tr></table></figure>
+
+<p><img src="/../images/image-20240921113218990.png" alt="image-20240921113218990"></p>
+</li>
+<li><p>配置镜像源</p>
+<p>我使用的是清华源</p>
+<ul>
+<li><p>临时指定镜像源下载</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install 包名  -i https://pypi.tuna.tsinghua.edu.cn/simple numpy</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设置为全局</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">conda config --add channels  https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main</span><br><span class="line">conda config --add channels  https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free</span><br><span class="line">conda config --add channels  https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r</span><br><span class="line">conda config --add channels  https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/pro</span><br><span class="line">conda config --add channels  https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2 </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看已经添加的镜像源</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda config --show channels</span><br></pre></td></tr></table></figure>
+
+<p><img src="/../images/image-20240921113621731.png" alt="image-20240921113621731"></p>
+</li>
+</ul>
+</li>
+<li><p>安装Python功能包</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install numpy</span><br><span class="line">pip install matplotlib</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p><img src="/../images/image-20240921113843114.png" alt="image-20240921113843114"></p>
+<ol start="5">
+<li><p>查看安装的包</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip list</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p><img src="/../images/image-20240921113857397.png" alt="image-20240921113857397"></p>
+<h3 id="在VScode-使用虚拟环境"><a href="#在VScode-使用虚拟环境" class="headerlink" title="在VScode 使用虚拟环境"></a>在VScode 使用虚拟环境</h3><p>打开命令面板。选择 “Python：选择解释器”。</p>
+<p><img src="/../images/image-20240921114204277.png" alt="image-20240921114204277"></p>
+<p><img src="/../images/image-20240921114237194.png" alt="image-20240921114237194"></p>
+<p>环境配置成功，YES！</p>
+<h2 id="运行程序"><a href="#运行程序" class="headerlink" title="运行程序"></a>运行程序</h2><h3 id="程序1"><a href="#程序1" class="headerlink" title="程序1"></a>程序1</h3><ul>
+<li><p>要求：运行打印“hello, world”程序；</p>
+</li>
+<li><p>源码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;hello,world&quot;</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>运行截图</p>
+<p><img src="/../images/image-20240921191316305.png" alt="image-20240921191316305"></p>
+</li>
+</ul>
+<h3 id="程序2"><a href="#程序2" class="headerlink" title="程序2"></a>程序2</h3><ul>
+<li><p>要求：导入扩展库numpy，matplotlib，绘制sin曲线</p>
+</li>
+<li><p>源码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义x的范围</span></span><br><span class="line">x = np.linspace(<span class="number">0</span>, <span class="number">4</span> * np.pi, num=<span class="number">512</span>)</span><br><span class="line"></span><br><span class="line">y = np.sin(x)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘制sin曲线，添加颜色、线型和标签</span></span><br><span class="line">plt.plot(x, y, color=<span class="string">&#x27;blue&#x27;</span>, linestyle=<span class="string">&#x27;--&#x27;</span>, label=<span class="string">&#x27;sin(x)&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加标题和坐标轴标签</span></span><br><span class="line">plt.title(<span class="string">&#x27;Sine Wave&#x27;</span>)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;x values (radians)&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;sin(x)&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示图例</span></span><br><span class="line">plt.legend()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 优化图形显示</span></span><br><span class="line">plt.grid(<span class="literal">True</span>)</span><br><span class="line">plt.tight_layout()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 展示图形</span></span><br><span class="line">plt.show()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>运行截图：</p>
+<p><img src="/../images/image-20240921191705799.png" alt="image-20240921191705799"></p>
+</li>
+</ul>
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/msdcp/article/details/127033151">VSCode 安装配置使用教程（最新版超详细保姆级含插件）一文就够了_vscode 使用教程-CSDN 博客</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_73800108/article/details/137296446">超详细版 Anaconda 的安装及使用 conda 创建、运行虚拟环境以及使用镜像源_anaconda 镜像源-CSDN 博客</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/ming12131342/article/details/140233867">Miniconda 安装及使用 for windows（保姆级教程）-CSDN 博客</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_32751937/article/details/89398603">pip临时使用清华镜像源_pip 临时使用清华源-CSDN博客</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_54383080/article/details/138613865">【Conda+vsCode】vsCode 中使用 conda 配置虚拟环境_vscode conda-CSDN博客</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2025/02/05/%E5%AF%92%E5%81%87-paln/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -793,7 +969,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-count">27</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
